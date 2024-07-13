@@ -1,8 +1,31 @@
 package components
 
+css columns() {
+    padding: 0.2rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+}
+
+css rows() {
+    padding: 0.2rem;
+    margin-bottom: 0.6rem;
+}
 
 templ main() {
-	<main>something in main</main>
+	<div class="container-fluid">
+        <div class={"row", templ.KV(rows(),true)}>
+            //col for image card
+            <div class={"col-sm-3", templ.KV(columns(),true)}>
+                @imageCard()
+            </div>
+            // col for information
+            <div class={"col-sm-4", templ.KV(columns(),true)}>
+                @infoCard()
+                @infoCard()
+                @infoCard()
+            </div>
+        </div>
+    </div>
 }
 
 templ Index() {
