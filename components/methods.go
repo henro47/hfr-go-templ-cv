@@ -5,7 +5,38 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	"github.com/a-h/templ"
 )
+
+func (d data) ProfTitle() string {
+	return d.Title
+}
+func (d data) ProfSubTitle() string {
+	return d.SubTitle
+}
+func (d data) ProfDesc() string {
+	return d.Description
+}
+func (d data) ProfImg() string {
+	return d.Image
+}
+
+func (d data) GithubURL() templ.SafeURL {
+	return d.Github
+}
+func (d data) LinkedinURL() templ.SafeURL {
+	return d.Linkedin
+}
+func (d data) EmailURL() templ.SafeURL {
+	return d.Email
+}
+func (d data) CellURL() templ.SafeURL {
+	return d.Cell
+}
+func (d data) ProjectURL() templ.SafeURL {
+	return d.Project
+}
 
 const (
 	ProfileDataPath = "data/profile_info.json"

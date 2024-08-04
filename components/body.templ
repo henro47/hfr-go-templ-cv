@@ -5,9 +5,9 @@ css paragraph() {
     text-justify: inter-word;
 }
 
-templ body(d data) {
+templ body(d profileData) {
     @spacer()
     <blockquote class="blockquote">
-        <p class={"paragraph", templ.KV(paragraph(), true)}>{d.Description}</p>
+        <p class={"paragraph", templ.KV(paragraph(), true)}>{d.ProfDesc()}</p>
     </blockquote>
 }

@@ -6,21 +6,21 @@ css ico() {
     margin-left: 0.5rem;
 }
 
-templ icons(d data) {
+templ icons(d IconData) {
     <figure class="text-center">
-        <a href={d.Github} target="_blank">
+        <a href={d.GithubURL()} target="_blank">
             <i class={"bi bi-github ico", templ.KV(ico(), true)}></i>
         </a>
-        <a href={d.Linkedin} target="_blank">
+        <a href={d.LinkedinURL()} target="_blank">
             <i class={"bi bi-linkedin ico", templ.KV(ico(), true)}></i>
         </a>
-        <a href={d.Cell} target="_blank">
+        <a href={d.CellURL()} target="_blank">
             <i class={"bi bi-telephone-inbound-fill ico", templ.KV(ico(), true)}></i>
         </a>
-         <a href={d.Email} target="_blank">
+         <a href={d.EmailURL()} target="_blank">
             <i class={"bi bi-chat-dots-fill ico", templ.KV(ico(), true)}></i>
         </a>
-        <a href={d.Project} target="_blank">
+        <a href={d.ProjectURL()} target="_blank">
             <i class={"bi bi-file-text-fill ico", templ.KV(ico(), true)}></i>
         </a>
     </figure>

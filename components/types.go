@@ -2,6 +2,21 @@ package components
 
 import "github.com/a-h/templ"
 
+type profileData interface {
+	ProfTitle() string
+	ProfSubTitle() string
+	ProfDesc() string
+	ProfImg() string
+}
+
+type IconData interface {
+	GithubURL() templ.SafeURL
+	LinkedinURL() templ.SafeURL
+	EmailURL() templ.SafeURL
+	CellURL() templ.SafeURL
+	ProjectURL() templ.SafeURL
+}
+
 type data struct {
 	Title       string        `json:"title"`
 	SubTitle    string        `json:"subtitle"`

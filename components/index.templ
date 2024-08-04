@@ -16,7 +16,7 @@ templ layout() {
         <div class={"row", templ.KV(rows(),true)}>
             <div class="col"></div>
             <div class="col-6">
-                @image(ReadJsonFile(ProfileDataPath).Image)
+                @image(ReadJsonFile(ProfileDataPath))
                 @header(ReadJsonFile(ProfileDataPath))
                 @body(ReadJsonFile(ProfileDataPath))
             </div>

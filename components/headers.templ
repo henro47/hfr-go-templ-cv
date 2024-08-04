@@ -13,18 +13,18 @@ templ spacer() {
     <div class={"spc", templ.KV(spc(), true)}></div>
 }
 
-templ header(d data) {
+templ header(d profileData) {
     <figure class="text-center">
         <blockquote class="blockquote">
-            <p>{d.Title}</p>
+            <p>{d.ProfTitle()}</p>
         </blockquote>
         <figcaption class="blockquote-footer">
-            {d.SubTitle}
+            {d.ProfSubTitle()}
         </figcaption>
     </figure>
 }
 
-templ image(imgPath string) {
+templ image(d profileData) {
     @spacer()
-    <img class={"rounded mx-auto d-block img ", templ.KV(img(),true)} src={imgPath} alt="alt text">
+    <img class={"rounded mx-auto d-block img ", templ.KV(img(),true)} src={d.ProfImg()} alt="alt text">
 }
