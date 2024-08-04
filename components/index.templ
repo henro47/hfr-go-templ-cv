@@ -23,11 +23,7 @@ templ layout() {
             <div class="col">
         </div></div>
         <div class={"row", templ.KV(rows(),true)}>
-           <div class="col"></div>
-           <div class="col-6">
-                @icons(ReadJsonFile(IconsDataPath))
-           </div>
-           <div class="col"></div>
+            @icons(ReadJsonFile(IconsDataPath))
         </div>
     </div>
 }
