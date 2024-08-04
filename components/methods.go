@@ -14,7 +14,7 @@ const (
 func ReadJsonFile(path string) data {
 	wd, err := os.Getwd()
 	if err != nil {
-		log.Fatalf("couldn't get current working directory %v", err)
+		log.Fatalf("could not get current working directory %v", err)
 	}
 	b, err := os.ReadFile(strings.Join([]string{wd, path}, `/`))
 	if err != nil {
@@ -24,9 +24,6 @@ func ReadJsonFile(path string) data {
 	err = json.Unmarshal(b, &d)
 	if err != nil {
 		log.Fatalf("could not unmarshal json data %s", err)
-	}
-	if len(d.Image) != 0 {
-		d.Image = strings.Join([]string{wd, d.Image}, `/`)
 	}
 	return d
 }

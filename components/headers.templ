@@ -1,7 +1,16 @@
 package components
 
 css img() {
-    border-radius: 50%;
+    max-height: 18rem;
+    max-width: 18rem;
+}
+
+css spc() {
+    margin-top: 7rem;
+}
+
+templ spacer() {
+    <div class={"spc", templ.KV(spc(), true)}></div>
 }
 
 templ header(d data) {
@@ -14,5 +23,6 @@ templ header(d data) {
 }
 
 templ image(imgPath string) {
-    <img class={"img", templ.KV(img(),true)} src={"media/profile.jpg"} alt="alt text">
+    @spacer()
+    <img class={"rounded mx-auto d-block img ", templ.KV(img(),true)} src={imgPath} alt="alt text">
 }
