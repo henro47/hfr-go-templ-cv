@@ -14,12 +14,14 @@ templ spacer() {
 }
 
 templ header(d data) {
-    <div>
-        <h1>{d.Title}</h1>        
-    </div>
-    <div>
-        <h6>{d.SubTitle}</h6>
-    </div>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p>{d.Title}</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            {d.SubTitle}
+        </figcaption>
+    </figure>
 }
 
 templ image(imgPath string) {
