@@ -19,5 +19,5 @@ func main() {
 	pagesHandler := http.NewServeMux()
 	pagesHandler.Handle("/media/", http.StripPrefix("/media/", http.FileServer(http.Dir(path.Join(wd, "/media/")))))
 	pagesHandler.Handle("/", templ.Handler(homePage))
-	log.Fatalln(http.ListenAndServe(":4000", pagesHandler))
+	log.Fatalln(http.ListenAndServe(":8080", pagesHandler))
 }

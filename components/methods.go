@@ -8,7 +8,8 @@ import (
 )
 
 const (
-	ProfileData = "data/profile_info.json"
+	ProfileDataPath = "data/profile_info.json"
+	IconsDataPath   = "data/icons_info.json"
 )
 
 func ReadJsonFile(path string) data {
