@@ -16,7 +16,6 @@ type IconData interface {
 	CellURL() templ.SafeURL
 	ProjectURL() templ.SafeURL
 }
-
 type data struct {
 	Title       string        `json:"title"`
 	SubTitle    string        `json:"subtitle"`
