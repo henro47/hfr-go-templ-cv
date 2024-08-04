@@ -1,21 +1,21 @@
 package components
 
 
-templ imageCard(d ImageCardData) {
+templ imageCard(d data) {
     <div class="card">
-        <img src={d.Image()} class="card-img-top" alt="...">
+        <img src={d.Image} class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{d.Title()}</h5>
-            <p class="card-text">{d.SubTitle()}</p>
+            <h5 class="card-title">{d.Title}</h5>
+            <p class="card-text">{d.SubTitle}</p>
         </div>
     </div>
 }
 
-templ infoCard(d InfoCardData) {
+templ infoCard(d data) {
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{d.Title()}</h5>
-            <p class="card-text">{d.SubTitle()}</p>
+            <h5 class="card-title">{d.Title}</h5>
+            <p class="card-text">{d.SubTitle}</p>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">An item</li>

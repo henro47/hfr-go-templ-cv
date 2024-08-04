@@ -1,0 +1,18 @@
+package components
+
+css img() {
+    border-radius: 50%;
+}
+
+templ header(d data) {
+    <div>
+        <h1>{d.Title}</h1>        
+    </div>
+    <div>
+        <h6>{d.SubTitle}</h6>
+    </div>
+}
+
+templ image(imgPath string) {
+    <img class={"img", templ.KV(img(),true)} src={"media/profile.jpg"} alt="alt text">
+}

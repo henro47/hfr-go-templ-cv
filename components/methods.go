@@ -1,33 +1,32 @@
 package components
 
-func (d data) Title() string    { return d.title }
-func (d data) SubTitle() string { return d.subTitle }
-func (d data) Image() string    { return d.image }
+import (
+	"encoding/json"
+	"log"
+	"os"
+	"strings"
+)
 
-type dataOption func(*data)
+const (
+	ProfileData = "data/profile_info.json"
+)
 
-func NewData(opts ...dataOption) data {
-	d := data{}
-	for _, opt := range opts {
-		opt(&d)
+func ReadJsonFile(path string) data {
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Fatalf("couldn't get current working directory %v", err)
+	}
+	b, err := os.ReadFile(strings.Join([]string{wd, path}, `/`))
+	if err != nil {
+		log.Fatalf("could not open json file %s, %v", path, err)
+	}
+	var d data
+	err = json.Unmarshal(b, &d)
+	if err != nil {
+		log.Fatalf("could not unmarshal json data %s", err)
+	}
+	if len(d.Image) != 0 {
+		d.Image = strings.Join([]string{wd, d.Image}, `/`)
 	}
 	return d
-}
-
-func NewTitle(title string) dataOption {
-	return func(d *data) {
-		d.title = title
-	}
-}
-
-func NewSubtitle(subtitle string) dataOption {
-	return func(d *data) {
-		d.subTitle = subtitle
-	}
-}
-
-func NewImage(image string) dataOption {
-	return func(d *data) {
-		d.image = image
-	}
 }
