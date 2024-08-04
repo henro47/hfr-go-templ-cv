@@ -2,8 +2,8 @@ package components
 
 css ico() {
     color: black;
-    height: 20rem;
-    width: 20rem;
+    height: 200px;
+    width: 200px;
     margin-left: 0.5rem;
 }
 
@@ -17,6 +17,9 @@ templ icons(d data) {
         </a>
         <a href={d.Cell} target="_blank">
             <i class={"bi bi-telephone-inbound-fill ico", templ.KV(ico(), true)}></i>
+        </a>
+        <a href={d.Project} target="_blank">
+            <i class={"bi bi-file-text-fill ico", templ.KV(ico(), true)}></i>
         </a>
     </figure>
 }
