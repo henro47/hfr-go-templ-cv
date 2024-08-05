@@ -13,15 +13,24 @@ css rows() {
 
 templ layout() {
 	<div class="container-fluid">
+        <!--Header section-->
         <div class={"row", templ.KV(rows(),true)}>
             <div class="col"></div>
             <div class="col-6">
                 @image(ReadJsonFile(ProfileDataPath))
                 @header(ReadJsonFile(ProfileDataPath))
+            </div>
+            <div class="col"></div>
+        </div>
+        <!--Body section-->
+        <div class={"row", templ.KV(rows(),true)}>
+            <div class="col"></div>
+            <div class="col-8">
                 @body(ReadJsonFile(ProfileDataPath))
             </div>
-            <div class="col">
-        </div></div>
+            <div class="col"></div>
+        </div>
+        <!--Icons section-->
         <div class={"row", templ.KV(rows(),true)}>
             @icons(ReadJsonFile(IconsDataPath))
         </div>
